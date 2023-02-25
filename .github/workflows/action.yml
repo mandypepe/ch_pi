@@ -65,8 +65,8 @@ jobs:
           push: true
           pull: true
           tags: |
-            ${{IMAGE_NAME}}:${{ github.sha }}
-            ${{IMAGE_NAME}}
+            ${{ IMAGE_NAME }}:${{ github.sha }}
+            ${{ IMAGE_NAME }}
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           SECRET_EMAIL:  ${{ secrets.SECRET_EMAIL }}
