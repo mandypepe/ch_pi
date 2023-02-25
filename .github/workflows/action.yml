@@ -1,29 +1,28 @@
 name: "Pichincha Ecu"
 on:
-    push:
-        branches: [develop]
+  push:
+    branches: [ develop ]
 env:
   REPO_NAME: ${{ github.event.repository.name }}
 
 jobs:
   install:
-   name: Install package
-   runs-on: ubuntu-latest
-
-   steps:
-   - name: Cdk install
-     run: python -m pip install aws-cdk-lib
+    name: Install package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cdk install
+        run: python -m pip install aws-cdk-lib
 
   build:
-     build-and-push:
-       name: Build and push image
-       runs-on: ubuntu-latest
-       description: build and push image
-       needs: install
-       steps:
-         - uses: actions/checkout@master
-         - naem: Check folders
-           run: pwd
+    build-and-push:
+      name: Build and push image
+      runs-on: ubuntu-latest
+      description: build and push image
+      needs: install
+      steps:
+        - uses: actions/checkout@master
+        - naem: Check folders
+          run: pwd
 
 
 
