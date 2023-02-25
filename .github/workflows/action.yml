@@ -21,7 +21,6 @@ jobs:
         run: |
             python3 -m pip install -r requirements.txt
             python -m pip install -r requirements.txt
-            - name: Install covergae
       - name: Coverage Badge
         run: python -m coverage xml coverage.xml
 
