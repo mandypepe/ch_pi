@@ -23,6 +23,7 @@ jobs:
   testing:
     name: Test code
     runs-on: ubuntu-latest
+    needs: install
     steps:
       - name: Pytest test coverage
         run: coverage run -m pytest conftest.py
