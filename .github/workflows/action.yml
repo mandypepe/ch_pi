@@ -20,7 +20,7 @@ jobs:
       needs: install
       steps:
       - uses: actions/checkout@master
-      - naem: Check folders
+      - name: Check folders
         run: pwd
 
 
