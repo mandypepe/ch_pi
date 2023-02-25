@@ -16,7 +16,6 @@ jobs:
   build:
       name: Build and push image
       runs-on: ubuntu-latest
-      description: build and push image
       needs: install
       steps:
       - uses: actions/checkout@master
