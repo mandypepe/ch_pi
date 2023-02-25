@@ -3,7 +3,7 @@ on:
   push:
     branches: [ develop ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, main ]
 env:
   REPO_NAME: ${{ github.event.repository.name }}
 
