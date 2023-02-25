@@ -32,7 +32,9 @@ jobs:
     needs: install
     steps:
       - name: Modify permission
-        run: sudo chmod 775 ./coverage.xml
+        run: |
+          ls -latr |grep coverage 
+          sudo chmod 775 ./coverage.xml
       - name: Get Cover
         if: github.event_name == 'pull_request'
         uses: orgoro/coverage@v3
