@@ -35,11 +35,12 @@ jobs:
     needs: install
     steps:
       - name: Modify permission
+        working-directory: coverage
         run: |
-          ls -latr coverage/
-          chmod 777 coverage/coverage.xml
+          chmod 777 coverage.xml
       - name: Get Cover
         if: github.event_name == 'pull_request'
+        working-directory: coverage
         uses: orgoro/coverage@v3
         with:
             coverageFile: coverage/coverage.xml
