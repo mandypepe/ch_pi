@@ -37,7 +37,6 @@ jobs:
           mkdir -p coverage
           python -m coverage xml coverage.xml
           mv coverage.xml coverage/
-          python -m coverage run -m pytest conftest.py
       - name: Get Cover
         if: github.event_name == 'pull_request'
         uses: orgoro/coverage@v3
