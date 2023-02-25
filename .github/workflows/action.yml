@@ -21,6 +21,11 @@ jobs:
       - uses: actions/checkout@master
       - name: Check folders
         run: pwd
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
 
 
