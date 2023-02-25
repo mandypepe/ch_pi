@@ -4,3 +4,5 @@ pytest
 coverage
 jwt
 aws-cdk-lib
+tox
+tox-gh-actions
