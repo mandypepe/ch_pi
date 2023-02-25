@@ -7,9 +7,23 @@ env:
 
 jobs:
   install:
-       name: Install package
-       runs-on: ubuntu-latest
+   name: Install package
+   runs-on: ubuntu-latest
 
+   steps:
+   - name: Cdk install
+     run: python -m pip install aws-cdk-lib
+
+   build:
+     build-and-push:
+       name: Build and push image
+       runs-on: ubuntu-latest
+       description: build and push image
+       needs: install
        steps:
-       - name: Cdk install
-         run: python -m pip install aws-cdk-lib
+         - uses: actions/checkout@master
+         - naem: Check folders
+           run: pwd
+
+
+
