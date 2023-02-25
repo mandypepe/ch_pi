@@ -23,6 +23,8 @@ jobs:
             python -m pip install -r requirements.txt
       - name: Coverage Badge
         run: python -m coverage xml coverage.xml
+      - name: Listando
+        run: ls -ltaR
 
   testing:
     name: Test code
