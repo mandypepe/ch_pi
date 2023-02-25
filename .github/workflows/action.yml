@@ -21,14 +21,15 @@ jobs:
         run: |
             python3 -m pip install -r requirements.txt
             python -m pip install -r requirements.txt
+            - name: Install covergae
+      - name: Coverage Badge
+        run: python -m coverage xml coverage.xml
 
   testing:
     name: Test code
     runs-on: ubuntu-latest
     needs: install
     steps:
-      - name: Coverage Badge
-        run: python -m coverage xml coverage.xml
       - name: Get Cover
         if: github.event_name == 'pull_request'
         uses: orgoro/coverage@v3
