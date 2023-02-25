@@ -25,7 +25,8 @@ jobs:
         run: |
           pwd
           mkdir -p coverage
-          python -m coverage xml coverage/coverage.xml
+          python -m coverage xml coverage.xml
+          mv coverage.xml coverage/
 
 
   testing:
@@ -35,13 +36,13 @@ jobs:
     steps:
       - name: Modify permission
         run: |
-          ls -latr coverage |grep coverage 
-          #sudo chmod 775 ./coverage/coverage.xml
+          ls -latr coverage/
+          chmod 777 coverage/coverage.xml
       - name: Get Cover
         if: github.event_name == 'pull_request'
         uses: orgoro/coverage@v3
         with:
-            coverageFile: ./coverage/coverage.xml
+            coverageFile: coverage/coverage.xml
             token: ${{ secrets.GITHUB_TOKEN }}
 
   build:
