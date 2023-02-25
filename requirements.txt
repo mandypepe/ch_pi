@@ -2,3 +2,5 @@ PyJWT==2.1.0
 Flask
 pytest
 coverage
+jwt
+aws-cdk-lib
