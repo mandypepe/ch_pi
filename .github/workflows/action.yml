@@ -26,13 +26,12 @@ jobs:
     needs: install
     steps:
       - name: Coverage Badge
-        uses: tj-actions/coverage-badge-py@v1.8
-
-      - name: Verify Changed files
-        uses: tj-actions/verify-changed-files@v12
-        id: changed_files
+        run: coverage xml coverage.xml
+      - name: Get Cover
+        uses: orgoro/coverage@v3
         with:
-          files: coverage.svg
+            coverageFile: coverage.xml
+            token: ${{ secrets.GITHUB_TOKEN }}
 
   build:
       name: Build and push image
