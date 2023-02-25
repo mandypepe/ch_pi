@@ -40,7 +40,6 @@ jobs:
           chmod 777 coverage.xml
       - name: Get Cover
         if: github.event_name == 'pull_request'
-        working-directory: coverage
         uses: orgoro/coverage@v3
         with:
             coverageFile: coverage/coverage.xml
