@@ -1,0 +1,4 @@
+PyJWT==2.1.0
+Flask
+pytest
+coverage
