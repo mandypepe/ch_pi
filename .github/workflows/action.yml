@@ -6,7 +6,7 @@ on:
     branches: [ master, main ]
 env:
   REPO_NAME: ${{ github.event.repository.name }}
-  IMAGE_NAME: "mandypepe/"
+  IMAGE_NAME: mandypepe/${{REPO_NAME}}
 jobs:
   install:
     name: Install package
@@ -65,8 +65,8 @@ jobs:
           push: true
           pull: true
           tags: |
-            ${{IMAGE_NAME}}${{REPO_NAME}}:${{ github.sha }}
-            ${{IMAGE_NAME}}${{REPO_NAME}}
+            ${{IMAGE_NAME}}:${{ github.sha }}
+            ${{IMAGE_NAME}}
         env:
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           SECRET_EMAIL:  ${{ secrets.SECRET_EMAIL }}
