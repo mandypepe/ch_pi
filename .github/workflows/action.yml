@@ -20,9 +20,9 @@ jobs:
       description: build and push image
       needs: install
       steps:
-        - uses: actions/checkout@master
-        - naem: Check folders
-          run: pwd
+      - uses: actions/checkout@master
+      - naem: Check folders
+        run: pwd
 
 
 
