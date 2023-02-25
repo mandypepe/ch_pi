@@ -35,7 +35,7 @@ jobs:
   build:
       name: Build and push image
       runs-on: ubuntu-latest
-      needs: install
+      needs: testing
       steps:
       - uses: actions/checkout@master
       - name: Check folders
