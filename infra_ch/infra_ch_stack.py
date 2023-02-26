@@ -68,6 +68,6 @@ class InfraChStack(Stack):
 
                                                            #security_groups=[seg_name]
                                                            )  # Default is True
-        CfnOutput(self, "load_balancer_dns_name", value=appload.load_balancer.load_balancer_dns_name)
+        CfnOutput(self, "Load_balancer_dns_name", value=appload.load_balancer.load_balancer_dns_name)
 
 
