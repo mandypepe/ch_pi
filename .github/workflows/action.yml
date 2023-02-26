@@ -27,7 +27,7 @@ jobs:
         run: |
           python -m pip install coverage
           pwd
-          mkdir -p coverage
+          mkdir -p srcdockerfiles/coverage
           python -m coverage xml coverage.xml
           mv coverage.xml srcdockerfiles/coverage/
       - name: Get Cover
