@@ -1,7 +1,7 @@
 FROM python:3.9
 
 WORKDIR /app
-COPY . .
+COPY .. .
 
 ENV FLASK_DEBUG 0
 ENV FLASK_ENV production

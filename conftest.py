@@ -3,7 +3,7 @@ from services  import auth_guard
 from services.auth_guard  import auth_guard
 from services.auth_provider import authenticate
 import os
-from app import create_app
+from app.app import create_app
 import mock
 #coverage run -m pytest conftest.py
 #coverage report -m  --omit */lib/*,*/Library/*
@@ -25,7 +25,7 @@ def test_decode_jwt():
         assert isinstance(decode,dict)
 
 def test_auth_guard():
-        assert isinstance(auth_guard,object)
+        assert isinstance(auth_guard, object)
 
 
 def test_authenticate():
