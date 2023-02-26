@@ -1,13 +1,28 @@
-from flask import Flask
-from api.auth import init as init_auth_routes
-from api.routes import init as init_routes
+#!/usr/bin/env python3
+import os
 
-def create_app():
-    app = Flask(__name__)
-    init_auth_routes(app)
-    init_routes(app)
-    return app
-# https://brunotatsuya.dev/blog/jwt-authentication-and-authorization-for-python-flask-rest-apis
-if __name__ == '__main__':
-    app = create_app()
-    app.run(host="0.0.0.0", port=80, debug=True)
+import aws_cdk as cdk
+
+from infra_ch.infra_ch_stack import InfraChStack
+
+
+app = cdk.App()
+InfraChStack(app, "InfraChStack",
+    # If you don't specify 'env', this stack will be environment-agnostic.
+    # Account/Region-dependent features and context lookups will not work,
+    # but a single synthesized template can be deployed anywhere.
+
+    # Uncomment the next line to specialize this stack for the AWS Account
+    # and Region that are implied by the current CLI configuration.
+
+    #env=cdk.Environment(account=os.getenv('CDK_DEFAULT_ACCOUNT'), region=os.getenv('CDK_DEFAULT_REGION')),
+
+    # Uncomment the next line if you know exactly what Account and Region you
+    # want to deploy the stack to. */
+
+    #env=cdk.Environment(account='123456789012', region='us-east-1'),
+
+    # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
+    )
+
+app.synth()

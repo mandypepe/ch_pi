@@ -12,3 +12,7 @@ def init(app):
         if not message or not to or not from_r or not timeToLifeSec :
             return jsonify({"message": " Data missing", "status": 400}), 400
         return jsonify({"message": f'Hello {to} your message will be send', "status": 200}), 200
+
+    @app.route('/', methods=['GET'])
+    def init_route():
+        return jsonify({"message": f'Ave Imperator, morituri te salutant', "status": 200}), 200

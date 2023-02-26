@@ -1,3 +1,13 @@
+*.swp
+package-lock.json
+__pycache__
+.pytest_cache
+.venv
+*.egg-info
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -50,6 +60,8 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+
+
 
 # Translations
 *.mo

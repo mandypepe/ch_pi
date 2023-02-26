@@ -1,10 +1,9 @@
-FROM python:3.9
+FROM --platform=linux/amd64 python:3.9
 
 WORKDIR /app
-COPY . .
+COPY .. .
 
-ENV FLASK_DEBUG 0
-ENV FLASK_ENV production
+ENV FLASK_DEBUG 1
 ENV FLASK_APP app.py
 ENV SECRET_KEY yXzB0lEGphwTYfKenExHmNqMmpFJJRjI
 ENV SECRET_EMAIL a@a.cu
