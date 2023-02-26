@@ -1,8 +1,2 @@
-PyJWT==2.1.0
-Flask
-pytest
-coverage
-jwt
-aws-cdk-lib
-tox
-tox-gh-actions
+aws-cdk-lib==2.66.1
+constructs>=10.0.0,<11.0.0

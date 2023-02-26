@@ -3,7 +3,7 @@ from services  import auth_guard
 from services.auth_guard  import auth_guard
 from services.auth_provider import authenticate
 import os
-from app.app import create_app
+from app import create_app
 import mock
 #coverage run -m pytest conftest.py
 #coverage report -m  --omit */lib/*,*/Library/*
